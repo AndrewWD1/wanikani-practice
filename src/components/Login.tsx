@@ -3,6 +3,15 @@ import styled from "styled-components";
 
 const StyledInput = styled.input`
   font-size: 0.75rem;
+  width: 250px;
+  margin: 0.5rem 0rem;
+  text-align: center;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 
@@ -14,7 +23,7 @@ function Login({
   const [textInput, setTextInput] = useState("");
 
   return (
-    <div>
+    <StyledDiv>
       <div>Enter your WaniKani API Key</div>
       <StyledInput
         type="text"
@@ -28,7 +37,14 @@ function Login({
           }
         }}
       ></StyledInput>
-    </div>
+      <button
+        onClick={() => {
+          setApiKey(textInput);
+        }}
+      >
+        Enter
+      </button>
+    </StyledDiv>
   );
 }
 
