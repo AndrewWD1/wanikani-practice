@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { exampleKanji } from "../exampleKanji";
 
@@ -14,7 +14,7 @@ const StyledKanji = styled.p`
   color: white;
   padding: 2rem 0rem;
   text-shadow: 5px 5px 0 #dd0093;
-  font-family: "Yuji Syuku", serif;
+  // font-family: "Yuji Syuku", serif;
 `;
 
 const StyledInput = styled.input`
