@@ -7,12 +7,26 @@ function getRandomInt(max: number) {
 }
 
 const StyledKanji = styled.p`
-  font-size: 4rem;
-  background-color: pink;
+  font-size: 9rem;
+  background-color: #ed009e;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 2rem 0rem;
+  text-shadow: 5px 5px 0 #dd0093;
+  font-family: "Yuji Syuku", serif;
 `;
 
 const StyledInput = styled.input`
   font-size: 1.5rem;
+  margin: 1rem 0rem;
+  padding: 1rem 0rem;
+  width: 100%;
+  text-align: center;
+`;
+
+const StyledItemType = styled.div`
+  color: white;
 `;
 
 function Question({
@@ -24,17 +38,18 @@ function Question({
   randomNum: number;
   setRandomNum: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const [textInput, setTextInput] = useState("");
+  const [textReadingInput, setTextReadingInput] = useState("");
+  const [textMeaningInput, setTextMeaningInput] = useState("");
 
   const enterFunction = () => {
     let val = false;
     data[randomNum].data.readings
       .filter((x) => x.primary)
       .forEach((x) => {
-        if (textInput === x.reading) {
+        if (textReadingInput === x.reading) {
           val = true;
           setRandomNum(getRandomInt(data.length));
-          setTextInput("");
+          setTextReadingInput("");
         }
       });
     if (val === false) {
@@ -47,8 +62,9 @@ function Question({
       <StyledKanji id="kanji">
         {randomNum === -1 ? "loading" : data[randomNum].data.characters}
       </StyledKanji>
+      <StyledItemType>Kanji</StyledItemType>
       <StyledInput
-        value={textInput}
+        value={textReadingInput}
         onKeyPress={(e) => {
           console.log(e.code);
           if (e.code === "Enter") {
@@ -56,8 +72,22 @@ function Question({
           }
         }}
         onChange={(e) => {
-          setTextInput(e.target.value);
+          setTextReadingInput(e.target.value);
         }}
+        placeholder="Reading"
+      ></StyledInput>
+      <StyledInput
+        value={textMeaningInput}
+        onKeyPress={(e) => {
+          console.log(e.code);
+          if (e.code === "Enter") {
+            enterFunction();
+          }
+        }}
+        onChange={(e) => {
+          setTextMeaningInput(e.target.value);
+        }}
+        placeholder="Meaning"
       ></StyledInput>
       <button onClick={enterFunction}>Enter</button>
     </>
