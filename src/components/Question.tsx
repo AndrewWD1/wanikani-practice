@@ -19,7 +19,7 @@ const StyledKanji = styled.p`
 
 const StyledInput = styled.input`
   font-size: 1.5rem;
-  margin: 1rem 0rem;
+  margin: 0.5rem 0rem;
   padding: 1rem 0rem;
   width: 100%;
   text-align: center;

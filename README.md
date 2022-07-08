@@ -1,4 +1,4 @@
-This is a small app I made to help with my WaniKani studying. It can be found live at . In order to actually use that app, you need a WaniKani API key, but you can get this for free by signing up for WaniKani.
+This is a small app I made to help with my WaniKani studying. It can be found live at [https://wkpractice.netlify.app/](https://wkpractice.netlify.app/). In order to actually use that app, you need a WaniKani API key, but you can get this for free by signing up for WaniKani.
 
 The problem that I wanted to solve was that it seemed like a lot of the learning I was doing in WaniKani was context dependent. Since I am very new to learning Japanese and I am trying to build up a solid vocab base before diving into focusing more on grammer, I don't see a lot of the Kanji I am learning outside of WaniKani. Indeed, even the fact that you learn in levels means that I often only see certain Kanji within the context of other Kanji from that level. This means that I am less able to recognize the reading and meaning of that Kanji outside of that specific context.
 
